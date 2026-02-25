@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+## QUIZ frontend app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A frontend application for the Quiz system built with **React**, **Vite**, and **Material UI**.
+The project includes environment variable configuration, code formatting with Prettier, and a clean Git workflow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Technology stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Material UI
+- TypeScript
+- Husky
+- Prettier
+- ESLint
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Requirements
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Before starting, make sure you have installed:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v22.0.0+)
+- npm (v10+)
+- Git
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Check versions:
+
+```bash
+node -v
+npm -v
+git --version
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installation and launch
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository and navigate into it:
+
+```bash
+git clone https://github.com/ostapichev/quiz-fe-app.git
 ```
+
+```bash
+cd quiz_fe_app
+```
+
+2. Install dependencies:
+
+```bash
+npm ci
+```
+
+3. Create <code>.env</code> file using <code>.env.sample</code>:
+
+```bash
+cp .env.sample .env
+```
+
+4. Start the server:
+
+```bash
+npm run dev
+```
+
+5. The application will be available at: http://localhost:5173
+
+---
+
+## Production Build
+
+1. Create optimized build:
+
+```bash
+npm run build
+```
+
+2. Preview production build:
+
+```bash
+npm run preview
+```
+
+## Code Formatting
+
+Format code using Prettier:
+
+```bash
+npm run format
+```
+
+---
+
+## Git Hooks (Husky)
+
+This project uses **Husky** to run code quality checks before commits.
+
+Before each commit, the following checks are executed automatically:
+
+- ESLint validation
+- Prettier formatting
+- Lint-staged checks
+
+This helps maintain consistent code quality and prevents committing broken or unformatted code.
+
+### Hooks
+
+- **pre-commit** — runs lint and formatting on staged files
+- **commit-msg** (optional) — validates commit messages
+
+If a commit fails, fix the reported issues and try again.
+
+To reinstall hooks manually:
+
+```bash
+npx husky install
+```
+
+## Contacts:
+
+- Author - [Oleh Ostapenko](https://github.com/ostapichev)
+- Mail me - ytoxos@gmail.com
+- Call me - 38-(093)-721-68-19
