@@ -66,7 +66,7 @@ cp .env.sample .env
 4. Start the server:
 
 ```bash
-npm run dev
+npm run dev -- --host
 ```
 
 5. The application will be available at: http://localhost:5173
@@ -96,7 +96,7 @@ docker images
 4. Run container:
 
 ```bash
-docker run -p 5173:5173 --env-file .env  quiz-app
+docker run -p 5173:5173 --env-file .env quiz-app
 ```
 
 or to run with Docker Compose (Recommended):
