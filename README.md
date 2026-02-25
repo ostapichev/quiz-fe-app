@@ -13,6 +13,8 @@ The project includes environment variable configuration, code formatting with Pr
 - Vite
 - Material UI
 - TypeScript
+- Docker
+- Docker Compose
 - Husky
 - Prettier
 - ESLint
@@ -46,7 +48,7 @@ git clone https://github.com/ostapichev/quiz-fe-app.git
 ```
 
 ```bash
-cd quiz_fe_app
+cd quiz-fe-app
 ```
 
 2. Install dependencies:
@@ -64,10 +66,76 @@ cp .env.sample .env
 4. Start the server:
 
 ```bash
-npm run dev
+npm run dev -- --host
 ```
 
 5. The application will be available at: http://localhost:5173
+
+---
+
+## Docker Workflow
+
+1. Check Docker installation:
+
+```bash
+docker --version
+```
+
+2. Build the image:
+
+```bash
+docker build -t quiz-app .
+```
+
+3. Verify image:
+
+```bash
+docker images
+```
+
+4. Run container:
+
+```bash
+docker run -p 5173:5173 --env-file .env quiz-app
+```
+
+or to run with Docker Compose (Recommended):
+
+```bash
+docker compose up --build
+```
+
+5. To view running containers:
+
+```bash
+docker ps
+```
+
+6. Check env file:
+
+```bash
+docker exec -it <container_id> env
+```
+
+7. The application will be available at: http://localhost:5173
+
+8. To stop a running container:
+
+```bash
+docker stop <container_id>
+```
+
+or to stop the project with Docker Compose (Recommended):
+
+```bash
+docker compose down
+```
+
+9. To remove the container:
+
+```bash
+docker rm <container_id>
+```
 
 ---
 
