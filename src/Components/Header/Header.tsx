@@ -15,7 +15,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import logo_quiz from '../../assets/quiz-logo.png';
+import logo_quiz from '../../assets/logo-quiz.png';
 import { pages, settings } from '../../ets';
 import type { INavigation } from '../../interfaces';
 import { NavigationItem } from './NavigationItem.tsx';
@@ -75,26 +75,27 @@ export const Header = () => {
               keepMounted
               onClose={handleCloseNavMenu}
               open={Boolean(anchorElNav)}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { md: 'none', xs: 'block' } }}
               transformOrigin={{
                 horizontal: 'left',
                 vertical: 'top',
               }}
             >
               {pages.map((page: INavigation, index: number) => (
-                <NavigationItem
-                  key={index}
-                  icon={page.icon}
-                  link={page.link}
-                  onClick={handleCloseNavMenu}
-                  withMenuItem
-                />
+                <MenuItem key={index}>
+                  <NavigationItem
+                    icon={page.icon}
+                    link={page.link}
+                    color="primary.main"
+                    onClick={handleCloseNavMenu}
+                  />
+                </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box
             sx={{
-              display: { xs: 'flex', md: 'none' },
+              display: { md: 'none', xs: 'flex' },
               flexGrow: 1,
             }}
           >
@@ -117,7 +118,12 @@ export const Header = () => {
               }}
             >
               {pages.map((page: INavigation, index: number) => (
-                <NavigationItem key={index} icon={page.icon} link={page.link} />
+                <NavigationItem
+                  key={index}
+                  icon={page.icon}
+                  link={page.link}
+                  color="secondary.main"
+                />
               ))}
             </Stack>
           </Box>
