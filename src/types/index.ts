@@ -1,1 +1,1 @@
-export * from './typography.type.ts';
+export * from './page-links-type.ts';

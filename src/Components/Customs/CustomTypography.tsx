@@ -1,25 +1,25 @@
-import { Typography } from '@mui/material';
-
-import type { ITypographyProps } from '../../types';
+import { Typography, type TypographyProps } from '@mui/material';
 
 interface IProps {
   fontWeight?: string;
   padding?: number;
   text: string;
-  variant: ITypographyProps;
+  textAlign: TypographyProps['align'];
+  variant: TypographyProps['variant'];
 }
+
 export const CustomTypography = ({
   fontWeight,
   padding,
   text,
+  textAlign,
   variant,
 }: IProps) => {
   return (
     <Typography
-      variant={variant}
-      fontWeight={fontWeight}
-      p={padding}
       gutterBottom
+      sx={{ fontWeight, padding, textAlign }}
+      variant={variant}
     >
       {text}
     </Typography>

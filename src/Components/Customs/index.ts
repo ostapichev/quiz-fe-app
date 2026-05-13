@@ -1,1 +1,2 @@
-export * from './CustomsTypography.tsx';
+export * from './CustomModal.tsx';
+export * from './CustomTypography.tsx';
