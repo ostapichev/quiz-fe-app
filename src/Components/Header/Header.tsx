@@ -1,22 +1,24 @@
 import { type MouseEvent, useState } from 'react';
 
-import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Avatar,
   Box,
-  Button,
   Container,
   IconButton,
   Menu,
   MenuItem,
+  Stack,
   Toolbar,
   Tooltip,
   Typography,
 } from '@mui/material';
 
+import logo_quiz from '../../assets/quiz-logo.png';
 import { pages, settings } from '../../ets';
+import type { INavigation } from '../../interfaces';
+import { NavigationItem } from './NavigationItem.tsx';
 
 export const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -25,6 +27,7 @@ export const Header = () => {
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -38,91 +41,85 @@ export const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, pr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+          <Box
+            alt="logo-quiz"
+            component="img"
+            src={logo_quiz}
             sx={{
-              pr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              display: { md: 'flex', xs: 'none' },
+              height: '4em',
+              pr: 1,
             }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          />
+          <Box sx={{ display: { md: 'none', xs: 'flex' }, flexGrow: 1 }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              aria-label="account of current user"
               color="inherit"
+              onClick={handleOpenNavMenu}
+              size="large"
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
+                horizontal: 'left',
                 vertical: 'bottom',
-                horizontal: 'left',
               }}
+              id="menu-appbar"
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              open={Boolean(anchorElNav)}
               sx={{ display: { xs: 'block', md: 'none' } }}
+              transformOrigin={{
+                horizontal: 'left',
+                vertical: 'top',
+              }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
+              {pages.map((page: INavigation, index: number) => (
+                <NavigationItem
+                  key={index}
+                  icon={page.icon}
+                  link={page.link}
+                  onClick={handleCloseNavMenu}
+                  withMenuItem
+                />
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, pr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+          <Box
             sx={{
-              pr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ py: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Box
+              component="img"
+              src={logo_quiz}
+              alt="logo-quiz"
+              sx={{
+                height: '4em',
+              }}
+            />
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
+            <Stack
+              direction="row"
+              sx={{
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '15%',
+              }}
+            >
+              {pages.map((page: INavigation, index: number) => (
+                <NavigationItem key={index} icon={page.icon} link={page.link} />
+              ))}
+            </Stack>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -131,20 +128,20 @@ export const Header = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ pt: '45px' }}
-              id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
                 horizontal: 'right',
+                vertical: 'top',
               }}
+              id="menu-appbar"
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              sx={{ pt: '45px' }}
+              transformOrigin={{
+                horizontal: 'right',
+                vertical: 'top',
+              }}
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>

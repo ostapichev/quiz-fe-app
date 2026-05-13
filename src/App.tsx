@@ -1,16 +1,9 @@
-import { CssBaseline } from '@mui/material';
+import { RouterProvider } from 'react-router-dom';
 
-import { Greeting, Header } from './Components';
-import { description, greeting } from './ets';
+import { router } from './router.tsx';
 
 const App = () => {
-  return (
-    <>
-      <CssBaseline />
-      <Header />
-      <Greeting greeting={greeting} description={description} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

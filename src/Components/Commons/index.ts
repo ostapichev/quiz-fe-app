@@ -1,2 +1,3 @@
-export * from './Greeting.tsx';
-export * from './Header.tsx';
+export * from './Error.tsx';
+export * from './Content.tsx';
+export * from './Footer.tsx';
