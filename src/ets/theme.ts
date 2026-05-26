@@ -21,14 +21,14 @@ export const theme: Theme = createTheme({
     },
 
     action: {
-      hover: '#da0000',
-      active: '#5a5a5a',
+      hover: '#bbbbbb',
+      active: '#cac4ca',
       disabled: '#bbbbbb',
     },
 
     text: {
       primary: '#555555',
-      secondary: '#bbbbbb',
+      secondary: '#fffafa',
       disabled: '#bbbbbb',
     },
   },

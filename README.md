@@ -13,6 +13,8 @@ The project includes environment variable configuration, code formatting with Pr
 - Vite
 - Material UI
 - TypeScript
+- React Router Dom
+- i18next react
 - Docker
 - Docker Compose
 - Husky
@@ -23,7 +25,7 @@ The project includes environment variable configuration, code formatting with Pr
 
 ## Requirements
 
-Before starting, make sure you have installed:
+### Before starting, make sure you have installed:
 
 - Node.js (v22.0.0+)
 - npm (v10+)
@@ -138,6 +140,31 @@ docker rm <container_id>
 ```
 
 ---
+
+## Navigation
+
+### The application uses react-router-dom for client-side routing and navigation between pages.
+
+### Available Pages
+
+| Page | Description |
+|---|---|
+| Home | Main application page |
+| Users | List of users |
+| User Profile | Detailed information about a selected user |
+| Companies | List of companies |
+| Company Profile | Detailed information about a selected company |
+| About | Information about the project |
+---
+
+## Language Switcher
+
+### The application includes a custom language selector component that:
+
+1. Changes the application language dynamically.
+2. Stores the selected language in localStorage.
+3. Restores the selected language after page refresh.
+
 
 ## Production Build
 

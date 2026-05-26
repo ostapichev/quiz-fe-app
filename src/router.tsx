@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
-import { PageLinks } from './ets';
-import { MainLayout } from './Layouts';
+import { PAGE_LINK } from './constants';
+import { MainLayout } from './layouts';
 import {
   AboutPage,
   CompaniesPage,
@@ -10,9 +10,9 @@ import {
   HomePage,
   UserProfilePage,
   UsersPage,
-} from './Pages';
+} from './pages';
 
-const { HOME, USERS, COMPANIES, ABOUT } = PageLinks;
+const { home, users, companies, about } = PAGE_LINK;
 
 export const router = createBrowserRouter([
   {
@@ -20,30 +20,30 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to={HOME} />,
+        element: <Navigate to={home} />,
       },
       {
-        path: HOME,
+        path: home,
         element: <HomePage />,
       },
       {
-        path: USERS,
+        path: users,
         element: <UsersPage />,
       },
       {
-        path: `${USERS}/:userId`,
+        path: `${users}/:userId`,
         element: <UserProfilePage />,
       },
       {
-        path: COMPANIES,
+        path: companies,
         element: <CompaniesPage />,
       },
       {
-        path: `${COMPANIES}/:companyId`,
+        path: `${companies}/:companyId`,
         element: <CompanyProfilePage />,
       },
       {
-        path: ABOUT,
+        path: about,
         element: <AboutPage />,
       },
     ],
