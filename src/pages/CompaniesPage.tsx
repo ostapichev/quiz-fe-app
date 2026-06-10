@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import { CompaniesList, Content } from '../components';
+import { Content, ContentList } from '../components';
+import { CONTENT } from '../constants';
 
 export const CompaniesPage = () => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ export const CompaniesPage = () => {
       modalTitle={t('pages.companies.title')}
       modalDescription={t('pages.companies.text')}
     >
-      <CompaniesList />
+      <ContentList content={CONTENT.companies} />
     </Content>
   );
 };

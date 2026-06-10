@@ -17,7 +17,7 @@ export const Content = ({
   description,
   modalDescription,
   modalTitle,
-  children = null,
+  children,
 }: IProps) => {
   return (
     <Container maxWidth="lg" fixed>
@@ -31,10 +31,13 @@ export const Content = ({
         <CustomTypography align="center" variant="h3" sx={{ p: 2 }}>
           {title}
         </CustomTypography>
+
         <CustomTypography align="justify" variant="subtitle1" sx={{ p: 2 }}>
           {description}
         </CustomTypography>
+
         {children}
+
         <CustomModal descriptionModal={modalDescription} title={modalTitle} />
       </Stack>
     </Container>

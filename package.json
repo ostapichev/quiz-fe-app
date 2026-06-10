@@ -1,7 +1,7 @@
 {
   "name": "quiz-fe-app",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -18,10 +18,12 @@
     "@fontsource/roboto": "^5.2.10",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",
+    "@reduxjs/toolkit": "^2.12.0",
     "i18next": "^26.1.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-i18next": "^17.0.7",
+    "react-redux": "^9.3.0",
     "react-router-dom": "^7.15.0"
   },
   "devDependencies": {
@@ -34,10 +36,13 @@
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-perfectionist": "^5.9.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",

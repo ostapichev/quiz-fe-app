@@ -23,21 +23,22 @@ export const HeaderUserMenu = () => {
           <Avatar alt="User" />
         </IconButton>
       </Tooltip>
+
       <Menu
-        sx={{ mt: '45px' }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
         }}
-        keepMounted
         transformOrigin={{
           vertical: 'top',
           horizontal: 'right',
         }}
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
+        sx={{ mt: '45px' }}
+        keepMounted
       >
         {settings.map((setting) => (
           <MenuItem key={setting} onClick={handleCloseUserMenu}>

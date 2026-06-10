@@ -8,6 +8,7 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
+
   resources: {
     en: {
       translation: {
@@ -23,6 +24,9 @@ i18n.use(initReactI18next).init({
         },
         buttons: {
           details: 'details',
+        },
+        form: {
+          size: 'size items',
         },
         pages: {
           home: {
@@ -58,6 +62,9 @@ i18n.use(initReactI18next).init({
         },
         buttons: {
           details: 'детальніше',
+        },
+        form: {
+          size: 'кількість елементів',
         },
         pages: {
           home: {

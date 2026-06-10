@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { MenuItem, Select, type SelectChangeEvent } from '@mui/material';
 
 import { LANGUAGE, languages, STORAGE_KEY } from '../../constants';
-
 import type { TLanguage } from '../../types';
 import { getItemStorage, setItemStorage } from '../../utils';
 

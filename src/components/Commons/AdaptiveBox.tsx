@@ -16,8 +16,8 @@ export const AdaptiveBox = ({ children, variant, flexGrow = 0 }: IProps) => {
     <Box
       sx={{
         display: variant === DEVICE.mobile ? MOBILE_DISPLAY : DESKTOP_DISPLAY,
-        flexGrow,
         justifyContent: 'flex-start',
+        flexGrow,
       }}
     >
       {children}
