@@ -1,5 +1,6 @@
-import { createTheme } from '@mui/material/styles';
 import type { Theme } from '@emotion/react';
+
+import { createTheme } from '@mui/material/styles';
 
 export const theme: Theme = createTheme({
   palette: {

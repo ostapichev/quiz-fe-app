@@ -1,3 +1,5 @@
-import { LANGUAGE } from '../constants';
+import { LANGUAGE, LANGUAGE_LABEL } from '../constants';
+import type { ValueOf } from './value-of.type.ts';
 
-export type TLanguage = (typeof LANGUAGE)[keyof typeof LANGUAGE];
+export type TLanguage = ValueOf<typeof LANGUAGE>;
+export type TLanguageLabel = ValueOf<typeof LANGUAGE_LABEL>;

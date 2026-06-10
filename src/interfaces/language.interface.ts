@@ -1,6 +1,6 @@
-import type { TLanguage } from '../types';
+import type { TLanguage, TLanguageLabel } from '../types';
 
 export interface ILanguage {
-  label: string;
+  label: TLanguageLabel;
   value: TLanguage;
 }

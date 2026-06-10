@@ -2,7 +2,7 @@ import { type MouseEvent, useState } from 'react';
 
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from '@mui/material';
 
-import { settings } from '../../ets';
+import { userSettings } from '../../ets';
 import { CustomTypography } from '../Customs';
 
 export const HeaderUserMenu = () => {
@@ -23,23 +23,24 @@ export const HeaderUserMenu = () => {
           <Avatar alt="User" />
         </IconButton>
       </Tooltip>
+
       <Menu
-        sx={{ mt: '45px' }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
         }}
-        keepMounted
         transformOrigin={{
           vertical: 'top',
           horizontal: 'right',
         }}
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
+        sx={{ pt: '45px' }}
+        keepMounted
       >
-        {settings.map((setting) => (
+        {userSettings.map((setting) => (
           <MenuItem key={setting} onClick={handleCloseUserMenu}>
             <CustomTypography sx={{ textAlign: 'center' }}>
               {setting}

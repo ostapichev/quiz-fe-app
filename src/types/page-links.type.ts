@@ -1,3 +1,4 @@
 import { PAGE_LINK } from '../constants';
+import type { ValueOf } from './value-of.type.ts';
 
-export type TPageLinks = (typeof PAGE_LINK)[keyof typeof PAGE_LINK];
+export type TPageLinks = ValueOf<typeof PAGE_LINK>;

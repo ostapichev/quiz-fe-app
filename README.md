@@ -11,6 +11,8 @@ The project includes environment variable configuration, code formatting with Pr
 
 - React
 - Vite
+- React Redux
+- Redux Toolkit
 - Material UI
 - TypeScript
 - React Router Dom
@@ -147,14 +149,15 @@ docker rm <container_id>
 
 ### Available Pages
 
-| Page | Description |
-|---|---|
-| Home | Main application page |
-| Users | List of users |
-| User Profile | Detailed information about a selected user |
-| Companies | List of companies |
+| Page            | Description                                   |
+| --------------- | --------------------------------------------- |
+| Home            | Main application page                         |
+| Users           | List of users                                 |
+| User Profile    | Detailed information about a selected user    |
+| Companies       | List of companies                             |
 | Company Profile | Detailed information about a selected company |
-| About | Information about the project |
+| About           | Information about the project                 |
+
 ---
 
 ## Language Switcher
@@ -165,6 +168,28 @@ docker rm <container_id>
 2. Stores the selected language in localStorage.
 3. Restores the selected language after page refresh.
 
+---
+
+## Redux Toolkit: Managing Display Size
+
+The application uses Redux Toolkit to manage the number of items displayed in lists.
+The selected value is stored in the global Redux state,
+allowing different components to access and update it consistently.
+A Material UI Select component is used to choose the desired number
+of visible items (e.g., 4, 6, 8, or 10).
+When the user selects a new value, a Redux action is dispatched to update the state.
+Components that consume this value automatically re-render
+and display the corresponding number of elements from the data array.
+
+### Workflow
+
+1. User selects a value from the dropdown.
+2. A Redux action is dispatched.
+3. The selected size is stored in the Redux store.
+4. Components read the value using selectors.
+5. The list is rendered according to the selected size.
+
+---
 
 ## Production Build
 

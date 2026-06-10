@@ -5,13 +5,18 @@ export const LANGUAGE = {
   ua: 'ua',
 } as const;
 
+export const LANGUAGE_LABEL = {
+  english: 'English',
+  ukrainian: 'Ukrainian',
+} as const;
+
 export const languages: ILanguage[] = [
   {
-    label: 'English',
+    label: LANGUAGE_LABEL.english,
     value: LANGUAGE.en,
   },
   {
-    label: 'Ukrainian',
+    label: LANGUAGE_LABEL.ukrainian,
     value: LANGUAGE.ua,
   },
 ];
