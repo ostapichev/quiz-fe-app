@@ -1,21 +1,11 @@
-import { Fragment } from 'react';
-
 import { AppBar, Stack, Toolbar } from '@mui/material';
 
 import { HOST, PORT } from '../../ets';
 import { CustomTypography } from '../Customs';
 
+const footerItems = [`Host: ${HOST}`, `Port: ${PORT}`];
+
 export const Footer = () => {
-  const subtitles = [
-    <CustomTypography align="left" variant="subtitle2" sx={{ p: 1 }}>
-      {`Host: ${HOST}`}
-    </CustomTypography>,
-
-    <CustomTypography align="left" variant="subtitle2" sx={{ p: 1 }}>
-      {`Port: ${PORT}`}
-    </CustomTypography>,
-  ];
-
   return (
     <AppBar
       component="footer"
@@ -27,9 +17,11 @@ export const Footer = () => {
       }}
     >
       <Toolbar>
-        <Stack direction="column">
-          {subtitles.map((subtitle, index) => (
-            <Fragment key={index}>{subtitle}</Fragment>
+        <Stack spacing={1}>
+          {footerItems.map((item) => (
+            <CustomTypography key={item} align="left" variant="subtitle2">
+              {item}
+            </CustomTypography>
           ))}
         </Stack>
       </Toolbar>
